@@ -86,7 +86,7 @@ def test(x_test,
          model,
          n_hist,
          n_pred,
-         load_path='./output/pemsd7-m/pemsd7-m.pth',
+         load_path='./output/pemsd7-m_best.pth',
          device='cpu'):
     start_time = time.time()
     checkpoint = torch.load(load_path, map_location=device, weights_only=False)
@@ -108,7 +108,7 @@ def test(x_test,
                      y_test,
                      x_stats)
 
-    x_test_sample = x_test[:len_test, -n_pred, :, :].transpose(0, 1)[:, 1, 1, 0].cpu().detach().numpy()
+    x_test_sample = x_test[:len_test, -n_pred:, :, :].transpose(0, 1)[:, 1, 1, 0].cpu().detach().numpy()
     y_test_sample = y_test[:, 1, 1, 0]
 
     plt.figure(figsize=(6, 4))
@@ -123,6 +123,11 @@ def test(x_test,
     for ix in range(n_pred):
         te = evl[:, ix]
         print(f'Time step {ix + 1}: MAPE {te[0]:7.3%}; MAE {te[1]:4.3f}; RMSE {te[2]:6.3f}')
+
+    mape_mean = evl[0].mean() * 100
+    mae_mean = evl[1].mean()
+    rmse_mean = evl[2].mean()
+    print(f"[Test] Average: MAPE={mape_mean:.2f}%, MAE={mae_mean:.4f}, RMSE={rmse_mean:.4f}")
 
     print(f'Model Test Time {time.time() - start_time:.3f} s')
     print('Testing model finished!')

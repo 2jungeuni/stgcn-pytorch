@@ -20,6 +20,7 @@ import torch.utils as utils
 # own
 from config import cfg
 from dataset.load_data import *
+from model.base import STGCN
 from utils.utils import *
 from trainer import train
 from tester import test
@@ -78,7 +79,7 @@ if __name__ == "__main__":
 
     blocks = [[1, 32, 64], [64, 32, 128]]
 
-    # train
+    train
     model = train(
         train_data=train_data,
         val_data=val_data,
@@ -87,6 +88,13 @@ if __name__ == "__main__":
         x_stats=x_stats,
         device=device
     )
+
+    model = STGCN(n_hist=cfg.n_hist,
+                  Ks=cfg.Ks,
+                  Kt=cfg.Kt,
+                  blocks=blocks,
+                  kernels=Lk,
+                  dropout=0.0).to(device)
 
     # test
     test(
