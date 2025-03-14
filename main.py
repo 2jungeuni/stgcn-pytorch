@@ -21,6 +21,8 @@ import torch.utils as utils
 from config import cfg
 from dataset.load_data import *
 from utils.utils import *
+from trainer import train
+from tester import test
 
 
 def set_env(seed):
@@ -48,22 +50,52 @@ if __name__ == "__main__":
 
     if cfg.dataset == 'metr-la':
         n_vertex = 207
-        cfg.n = n_vertex
     elif cfg.dataset == 'pems-bay':
         n_vertex = 325
-        cfg.n = n_vertex
     elif cfg.dataset == 'pemsd7-m':
         n_vertex = 228
-        cfg.n = n_vertex
     else:
         print(f"[ERROR] Invalid dataset {cfg.dataset}")
         sys.exit()
+
+    cfg.n = n_vertex
 
     # calculate graph kernel
     L = scaled_laplacian(adj)
 
     # alternative approximation method: 1st approx - first_approx(W, n)
-    Lk = torch.tensor(cheb_poly_approx(L, cfg.Ks, n_vertex), dtype=torch.float32, device=device)
+    Lk = torch.tensor(cheb_poly_approx(L, cfg.Ks, n_vertex),
+                      dtype=torch.float32,
+                      device=device)
 
-    data_dict, x_stats = data_gen(file_path=f"./data/{cfg.dataset}/vel.csv", data_config=data_config, n_route=228)
+    data_dict, x_stats = data_gen(file_path=f"./data/{cfg.dataset}/vel.csv",
+                                  data_config=(34, 5, 5),
+                                  n_route=cfg.n)
+
+    train_data = data_dict['train']
+    val_data = data_dict['val']
+    test_data = data_dict['test']
+
+    blocks = [[1, 32, 64], [64, 32, 128]]
+
+    # train
+    model = train(
+        train_data=train_data,
+        val_data=val_data,
+        blocks=blocks,
+        kernel=Lk,
+        x_stats=x_stats,
+        device=device
+    )
+
+    # test
+    test(
+        x_test=test_data,
+        x_stats=x_stats,
+        model=model,
+        n_hist=cfg.n_hist,
+        n_pred=cfg.n_pred,
+        device=device
+    )
+
 
