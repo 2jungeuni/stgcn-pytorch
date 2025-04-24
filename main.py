@@ -79,8 +79,8 @@ if __name__ == "__main__":
 
     blocks = [[1, 32, 64], [64, 32, 128]]
 
-    train
-    model = train(
+    # train
+    train(
         train_data=train_data,
         val_data=val_data,
         blocks=blocks,
@@ -88,22 +88,4 @@ if __name__ == "__main__":
         x_stats=x_stats,
         device=device
     )
-
-    model = STGCN(n_hist=cfg.n_hist,
-                  Ks=cfg.Ks,
-                  Kt=cfg.Kt,
-                  blocks=blocks,
-                  kernels=Lk,
-                  dropout=0.0).to(device)
-
-    # test
-    test(
-        x_test=test_data,
-        x_stats=x_stats,
-        model=model,
-        n_hist=cfg.n_hist,
-        n_pred=cfg.n_pred,
-        device=device
-    )
-
 
