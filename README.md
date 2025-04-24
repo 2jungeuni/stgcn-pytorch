@@ -38,7 +38,7 @@ python3 tester.py
     <td align="center">MAE/MAPE/RMSE</td>
   </tr>
   <tr>
-    <td align="center">Original author performance</td>
+    <td align="center">Original performance</td>
     <td align="center">3.57 / 8.69 / 6.77</td>
     <td align="center">3.03 / 7.33 / 5.70</td>
     <td align="center">2.25 / 5.26 / 4.04</td>
@@ -59,4 +59,6 @@ Therefore, we compare the model's MAE loss to the copy loss to see whether the m
     <img src=plot/pemsd7-m/pemsd7m-mae-loss_45.svg width="33%"><img src=plot/pemsd7-m/pemsd7m-mae-loss_30.svg width="33%"><img src=plot/pemsd7-m/pemsd7m-mae-loss_15.svg width="33%">
 </div>
 
-<img src=plot/pemsd7-m/test_45.png width="280" height="140"><img src=plot/pemsd7-m/test_30.png width="280" height="140"><img src=plot/pemsd7-m/test_15.png width="280" height="140">
+<div align="center">
+<img src=plot/pemsd7-m/test_45.svg width="50%"><img src=plot/pemsd7-m/test_30.svg width="50%"><img src=plot/pemsd7-m/test_15.svg width="50%">
+</div>

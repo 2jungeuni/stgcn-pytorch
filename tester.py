@@ -183,7 +183,7 @@ if __name__ == "__main__":
                   kernels=Lk,
                   dropout=0.0).to(device)
 
-    checkpoint = torch.load("output/pemsd7-m/pred_15mins/pemsd7-m_best.pth",
+    checkpoint = torch.load("../stgcn/output/pemsd7-m/pred_45mins/pemsd7-m_best.pth",
                             map_location=device,
                             weights_only=False)
     model.load_state_dict(checkpoint['model_state_dict'])
@@ -207,9 +207,11 @@ if __name__ == "__main__":
     plt.plot(pred, label='pred', markersize=2, marker='o', linewidth=2)
     plt.plot(gt, label='gt', markersize=2, marker='o', linewidth=2)
 
-    plt.title("Velocity Prediction")
-    plt.xlabel('Time step')
-    plt.ylabel('Velocity')
+    plt.title("Velocity Prediction (45 mins)", fontsize=16, fontweight='bold')
+    plt.xlabel('Time step', fontsize=12, fontweight='bold')
+    plt.ylabel('Velocity', fontsize=12, fontweight='bold')
+    plt.xticks(fontsize=12, fontweight='bold')
+    plt.yticks(fontsize=12, fontweight='bold')
     plt.grid(True)
 
-    plt.savefig("test_15.png")
+    plt.savefig("test_45.svg")
