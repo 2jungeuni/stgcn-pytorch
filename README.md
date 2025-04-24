@@ -1,5 +1,4 @@
 # stgcn-pytorch
-
 This repository contains an implementation of the Spatio-Temporal Graph Convolutional Network (STGCN) model in **PyTorch**.
 It is adapted from the [official STGCN code](https://github.com/VeritasYin/STGCN_IJCAI-18), which is originally based on **TensorFlow**.
 ---
