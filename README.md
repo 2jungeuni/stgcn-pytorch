@@ -53,6 +53,12 @@ python3 tester.py
 Comparing **MAE loss** and **copy loss**, the copy acts as a baseline that indicates the error incurred if the model simply **copies the output from the previous time step** rather than predicting a new value.
 In many sequence-to-sequence tasks, this naive copying strategy can greatly reduce the overall loss because it does not attempt to forecast future changes. It just reuses what was already observed.
 Therefore, we compare the model's MAE loss to the copy loss to see whether the model is actually predicting future values rather than just repeating past data.
-![](plot/pemsd7-m/pemsd7m-mae-loss_45.png){: width="33%" height="33%"}
-![](plot/pemsd7-m/pemsd7m-mae-loss_30.png){: width="33%" height="33%"}
-![](plot/pemsd7-m/pemsd7m-mae-loss_15.png){: width="33%" height="33%"}
+
+<img src=plot/pemsd7-m/pemsd7m-mae-loss_45.png width="160" height="120">
+<img src=plot/pemsd7-m/pemsd7m-mae-loss_30.png width="160" height="120">
+<img src=plot/pemsd7-m/pemsd7m-mae-loss_15.png width="160" height="120">
+
+
+<img src=plot/pemsd7-m/test_45.png width="160" height="120">
+<img src=plot/pemsd7-m/test_30.png width="160" height="120">
+<img src=plot/pemsd7-m/test_15.png width="160" height="120">
