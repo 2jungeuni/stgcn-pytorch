@@ -22,38 +22,41 @@ python3 tester.py
 
 ---
 ## Results
+<div align="center">
 <table>
   <tr>
     <!-- (1,1) merged with (2,1) by rowspan="2" -->
     <td rowspan="2"></td>
-    <td>45 mins prediction </td>
-    <td>30 mins prediction</td>
-    <td>15 mins prediction</td>
+    <td align="center">45 mins prediction</td>
+    <td align="center">30 mins prediction</td>
+    <td align="center">15 mins prediction</td>
   </tr>
   <tr>
     <!-- First column is merged above, so only three cells here -->
-    <td>MAE/MAPE/RMSE</td>
-    <td>MAE/MAPE/RMSE</td>
-    <td>MAE/MAPE/RMSE</td>
+    <td align="center">MAE/MAPE/RMSE</td>
+    <td align="center">MAE/MAPE/RMSE</td>
+    <td align="center">MAE/MAPE/RMSE</td>
   </tr>
   <tr>
-    <td>Original author performance</td>
-    <td>3.57 / 8.69 / 6.77</td>
-    <td>3.03 / 7.33 / 5.70</td>
-    <td>2.25 / 5.26 / 4.04</td>
+    <td align="center">Original author performance</td>
+    <td align="center">3.57 / 8.69 / 6.77</td>
+    <td align="center">3.03 / 7.33 / 5.70</td>
+    <td align="center">2.25 / 5.26 / 4.04</td>
   </tr>
   <tr>
-    <td>Our performance</td>
-    <td>3.07 / 7.30 / 5.54</td>
-    <td>3.51 / 8.36 / 6.56</td>
-    <td>3.86 / 9.55 / 7.44</td>
+    <td align="center">Our performance</td>
+    <td align="center">3.07 / 7.30 / 5.54</td>
+    <td align="center">3.51 / 8.36 / 6.56</td>
+    <td align="center">3.86 / 9.55 / 7.44</td>
   </tr>
 </table>
+</div>
 
 Comparing **MAE loss** and **copy loss**, the copy acts as a baseline that indicates the error incurred if the model simply **copies the output from the previous time step** rather than predicting a new value.
 In many sequence-to-sequence tasks, this naive copying strategy can greatly reduce the overall loss because it does not attempt to forecast future changes. It just reuses what was already observed.
 Therefore, we compare the model's MAE loss to the copy loss to see whether the model is actually predicting future values rather than just repeating past data.
-
-<img src=plot/pemsd7-m/pemsd7m-mae-loss_45.svg width="300" height="200"><img src=plot/pemsd7-m/pemsd7m-mae-loss_30.svg width="300" height="200"><img src=plot/pemsd7-m/pemsd7m-mae-loss_15.svg width="300" height="200">
+<div align="center">
+    <img src=plot/pemsd7-m/pemsd7m-mae-loss_45.svg width="33%"><img src=plot/pemsd7-m/pemsd7m-mae-loss_30.svg width="33%"><img src=plot/pemsd7-m/pemsd7m-mae-loss_15.svg width="33%">
+</div>
 
 <img src=plot/pemsd7-m/test_45.png width="280" height="140"><img src=plot/pemsd7-m/test_30.png width="280" height="140"><img src=plot/pemsd7-m/test_15.png width="280" height="140">
