@@ -26,15 +26,15 @@ python3 tester.py
   <tr>
     <!-- (1,1) merged with (2,1) by rowspan="2" -->
     <td rowspan="2"></td>
-    <td>60 mins history &rightarrow; 45 mins prediction </td>
-    <td>60 mins history &rightarrow; 30 mins prediction</td>
-    <td>60 mins history &rightarrow; 15 mins prediction</td>
+    <td>45 mins prediction </td>
+    <td>30 mins prediction</td>
+    <td>15 mins prediction</td>
   </tr>
   <tr>
     <!-- First column is merged above, so only three cells here -->
-    <td>MAE (&darr;) / MAPE (&darr;)/RMSE(&darr;)</td>
-    <td>MAE (&darr;) / MAPE (&darr;) / RMSE(&darr;)</td>
-    <td>MAE (&darr;) / MAPE (&darr;) / RMSE(&darr;)</td>
+    <td>MAE/MAPE/RMSE</td>
+    <td>MAE/MAPE/RMSE</td>
+    <td>MAE/MAPE/RMSE</td>
   </tr>
   <tr>
     <td>Original author performance</td>
