@@ -54,7 +54,7 @@ Comparing **MAE loss** and **copy loss**, the copy acts as a baseline that indic
 In many sequence-to-sequence tasks, this naive copying strategy can greatly reduce the overall loss because it does not attempt to forecast future changes. It just reuses what was already observed.
 Therefore, we compare the model's MAE loss to the copy loss to see whether the model is actually predicting future values rather than just repeating past data.
 
-<img src=plot/pemsd7-m/pemsd7m-mae-loss_45.png width="200" height="150"><img src=plot/pemsd7-m/pemsd7m-mae-loss_30.png width="200" height="150"><img src=plot/pemsd7-m/pemsd7m-mae-loss_15.png width="200" height="150">
+<img src=plot/pemsd7-m/pemsd7m-mae-loss_45.png width="300" height="200"><img src=plot/pemsd7-m/pemsd7m-mae-loss_30.png width="300" height="200"><img src=plot/pemsd7-m/pemsd7m-mae-loss_15.png width="300" height="200">
 
 
 <img src=plot/pemsd7-m/test_45.png width="160" height="120">
