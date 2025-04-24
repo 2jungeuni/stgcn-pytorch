@@ -57,6 +57,4 @@ Therefore, we compare the model's MAE loss to the copy loss to see whether the m
 <img src=plot/pemsd7-m/pemsd7m-mae-loss_45.png width="230" height="200"><img src=plot/pemsd7-m/pemsd7m-mae-loss_30.png width="230" height="200"><img src=plot/pemsd7-m/pemsd7m-mae-loss_15.png width="230" height="200">
 
 
-<img src=plot/pemsd7-m/test_45.png width="160" height="120">
-<img src=plot/pemsd7-m/test_30.png width="160" height="120">
-<img src=plot/pemsd7-m/test_15.png width="160" height="120">
+<img src=plot/pemsd7-m/test_45.png width="280" height="140"><img src=plot/pemsd7-m/test_30.png width="280" height="140"><img src=plot/pemsd7-m/test_15.png width="280" height="140">
